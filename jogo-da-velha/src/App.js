@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import './App.css';
 
-function Square({valor}){
+function Square(){
+  const [valor,setValor] = useState(null);
 
   function handleClick(){
-    console.log("botao clicado");
+    setValor('X');
   }
 
   return(
@@ -11,29 +13,26 @@ function Square({valor}){
   );
 }
 
-
-
-
 export default function Tabuleiro(){
 
     return (
       <div>
         <div>
-          <Square valor = "1"/>
-          <Square valor = "2"/>
-          <Square valor = "3"/>
+          <Square/>
+          <Square/>
+          <Square/>
         </div>
         
         <div>
-          <Square valor = "4"/>
-          <Square valor = "5"/>
-          <Square valor = "6"/>
+          <Square/>
+          <Square/>
+          <Square/>
         </div>
         
         <div>
-          <Square valor = "7"/>
-          <Square valor = "8"/>
-          <Square valor = "9"/>
+          <Square/>
+          <Square/>
+          <Square/>
         </div>
       
      </div>
