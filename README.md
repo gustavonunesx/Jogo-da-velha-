@@ -21,15 +21,6 @@ Este é um simples projeto de **Jogo da Velha** desenvolvido em **React**, onde 
 
 ---
 
-## 📝 Estrutura do Projeto
-
-/src
-├─ App.js # Componente principal do tabuleiro
-├─ App.css # Estilização do jogo
-└─ index.js # Ponto de entrada do React
-
-
----
 
 ## 🔧 Como Rodar o Projeto
 
