@@ -31,43 +31,7 @@ function Board() {
     setIsNext(!xIsNext);
   }
 
-  // ---- LÓGICA DE VITÓRIA ----
-  const winner = calculateWinner(squares);
-  let status;
-  if (winner) {
-    status = "Vencedor: " + winner + " 🏆"; // Exibe o vencedor
-  } else {
-    status = "Próximo jogador: " + (xIsNext ? "X" : "O"); // Exibe de quem é a vez
-  }
-  // -------------------------
-
-  return (
-    // Usamos <> (Fragment) para agrupar os elementos
-    <>
-      {/* Adicionamos um div para exibir o status do jogo */}
-      <div className="status">{status}</div>
-      
-      <div className="board-row">
-        <Square valor={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square valor={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square valor={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-      <div className="board-row">
-        <Square valor={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square valor={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square valor={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square valor={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square valor={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square valor={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
-    </>
-  );
-}
-
-// ---- FUNÇÃO AUXILIAR PARA CALCULAR O VENCEDOR ----
-function calculateWinner(squares) {
+  function calculateWinner(squares) {
   // Lista com todas as combinações de vitória possíveis
   const lines = [
     [0, 1, 2], // Linha 1
@@ -90,5 +54,42 @@ function calculateWinner(squares) {
   }
   return null; // Retorna null se não houver vencedor
 }
+
+  
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = "Vencedor: " + winner ; // Exibe o vencedor
+  } else {
+    status = "Próximo jogador: " + (xIsNext ? "X" : "O"); // Exibe de quem é a vez
+  }
+
+
+  return (
+    // Usamos <> (Fragment) para agrupar os elementos
+    <>
+  
+      <div className="status">{status}</div>
+      
+      <div className="board-row">
+        <Square valor={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square valor={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square valor={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+      <div className="board-row">
+        <Square valor={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square valor={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square valor={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="board-row">
+        <Square valor={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square valor={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square valor={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
+  );
+}
+
+
 
 export default Board;
